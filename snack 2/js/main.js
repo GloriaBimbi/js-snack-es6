@@ -39,3 +39,7 @@ const students = [
 // creo un array di stringhe contenente il loro nome tutto in maiuscolo
 const studentsNames = students.map((student) => student.name.toUpperCase());
 console.log(studentsNames);
+
+// creo un array di oggetti "studente" che hanno un totale di voti superiore a 70
+const goodStudents = students.filter((student) => student.grades > 70);
+console.log(goodStudents);

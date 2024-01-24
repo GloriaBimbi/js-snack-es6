@@ -23,3 +23,4 @@ Questo è l'elenco degli studenti:
 ## SVOLGIMENTO:
 
 - STEP 1: creo un array di stringhe contenente il loro nome tutto in maiuscolo utilizzando un ciclo map e la funzione toUpperCase()
+- STEP 2: creo un array di oggetti "studente" che hanno un totale di voti superiore a 70 utilizzando il ciclo filter
