@@ -19,3 +19,7 @@ Questo è l'elenco degli studenti:
 | 196 | Luigi Grimaldello | 68 |
 | 102 | Piero della Francesca | 50 |
 | 120 | Francesca da Polenta | 84 |
+
+## SVOLGIMENTO:
+
+- STEP 1: creo un array di stringhe contenente il loro nome tutto in maiuscolo utilizzando un ciclo map e la funzione toUpperCase()

@@ -37,8 +37,5 @@ const students = [
 ];
 
 // creo un array di stringhe contenente il loro nome tutto in maiuscolo
-const studentsNames = students.map((student) => {
-  const name = student.name.toUpperCase();
-  return name;
-});
+const studentsNames = students.map((student) => student.name.toUpperCase());
 console.log(studentsNames);
