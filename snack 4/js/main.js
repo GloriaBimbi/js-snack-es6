@@ -39,6 +39,9 @@ const teams = [
 // creo un array che conterrà gli oggetti con le chiavi nome e falli subiti
 const newTeamsArray = [];
 
+//recupero l'elemento html di cui ho bisogno
+const listCountainer = document.getElementById("list-container");
+
 // creo un ciclo che scorre l'array delle squadre
 teams.forEach((team) => {
   //con il destructing estraggo le variabili nome, punteggio e falloi subiti
@@ -47,6 +50,11 @@ teams.forEach((team) => {
   score = generateRandomNumber(0, 10);
   foul = generateRandomNumber(0, 10);
   console.log(`Punteggio: ${score}; Falli subiti: ${foul}`);
+  listCountainer.innerHTML += `
+  <li>
+    La squadra ${name} ha totalizzato ${score} punti e ha subito ${foul} falli
+  </li>
+  `;
   // nel nuovo array di squadre inserisco degli oggetti che contengono solo il nome e i falli subiti
   newTeamsArray.push({
     name,
