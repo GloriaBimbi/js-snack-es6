@@ -14,7 +14,7 @@ const products = [
 const number = generateRandomNumber(1, 6);
 console.log("Numero randomico: " + number);
 
-let price = 0;
+let price = products[0].price;
 let ingredienti = products[0].title;
 
 for (i = 1; i < number; i++) {
