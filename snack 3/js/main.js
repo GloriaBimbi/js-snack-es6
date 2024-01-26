@@ -22,36 +22,26 @@ const bicicles = [
     weightInKg: 9.6,
   },
 ];
-// stampo in console la bici con peso minore utilizzando destructuring e
-// template literal
 
-let minWeight = 10;
-biciclesWeight = [];
+// prendo l'elemento html che mi serve
+const minWeight = document.getElementById("min-weight");
 
-bicicles.forEach((bicicle, index) => {
-  const { name, weightInKg } = bicicle;
-  console.log(`La bici numero ${index + 1} si chiama: ${name}`);
-  biciclesWeight.push(weightInKg);
+// con il destructoring salvo una bicicletta per poterla confrontare con le altre
+let [lighterBicicle] = bicicles;
+console.log(lighterBicicle);
+
+// creo un ciclo forEach che con il destructing crea le variabili name e weightInKg delle biciclette dell'array bicicles
+bicicles.forEach((bicicle) => {
+  const { weightInKg: currentWeight } = bicicle;
+  const { weightInKg: ligherWeight } = lighterBicicle;
+  // con un if trovo la bicicletta dal peso minore
+  if (currentWeight < ligherWeight) lighterBicicle = bicicle;
 });
-console.log(biciclesWeight);
 
-for (i = 0; i < biciclesWeight.length; i++) {
-  if (biciclesWeight[i] < biciclesWeight[i + 1]) {
-    minWeight = biciclesWeight[i];
-    console.log(
-      biciclesWeight[i] +
-        "<" +
-        biciclesWeight[i + 1] +
-        " quindi la bici che pesa meno, pesa: " +
-        minWeight
-    );
-  }
-}
+// stampo in console che la bicicletta dal peso minore fa riferimento all'elemento in posizione 0 dell'array dei pesi
+console.log(
+  `La bicicletta ${lighterBicicle.name} è quella che pesa di meno e pesa ${lighterBicicle.weightInKg} kg`
+);
 
-console.log("la bici con il peso minore pesa: " + minWeight);
-
-// for (let i = 0; i < bicicles.length; i++) {
-//   const { name, weightInKg } = bicicles[i];
-//   console.log(`La bici numero ${i + 1} si chiama ${name} e pesa ${weightInKg}`);
-//   if (weightInKg < weightInKg)
-// }
+// stampo su pagina la dicitura che annuncia la bicicletta meno pesante
+minWeight.innerHTML = `<h2> La bicicletta ${lighterBicicle.name} è quella che pesa di meno e pesa ${lighterBicicle.weightInKg} kg </h2>`;
